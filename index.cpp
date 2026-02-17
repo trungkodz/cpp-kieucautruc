@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 /*
@@ -40,7 +41,7 @@ struct cuahangoto
 
 int main()
 {
-
+    // truy cập biến thành viên <tênstruct>.<tênbiếnthànhviên>
     oto oto3;
 
     oto1.name = "honda";
@@ -64,5 +65,19 @@ int main()
               {{"lambogini"}, {8000}}};
 
     newcar.thongtin();
+
+    cout << "=======================================" << endl;
+
+    // nhập thông tin từ bàn phím
+    cuahangoto cuahang1;
+    cout << "nhap gioi thieu cua hang: ";
+    gets_s(cuahang1.gioithieu, 100);
+
+    cout << "=======================================" << endl;
+
+    // sao chep thông tin đối tượng này cho đối tượng khác
+
+    cuahangoto cuahang2 = cuahang1; // chúng quản lý 2 ô nhớ khác nhau
+    cout << "thong tin cua hang 2: " << cuahang2.gioithieu << endl;
     return 0;
 }
