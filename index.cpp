@@ -7,6 +7,10 @@ struct: cho phép tự định nghĩa một kiểu dữ liệu mới bằng các
 giống class nhưng dễ truy cập hơn. mặc định là public và tự động kế thừa
 
 */
+
+/*
+mảng cấu trúc: coi cấu trúc như một kiểu dữ liệu do ta tạo ra khai báo như các mảng thông thường
+*/
 // vi du
 struct oto
 {
@@ -38,6 +42,36 @@ struct cuahangoto
         lambogini.thongtin();
     }
 };
+
+struct sinhvien
+{
+    int masv;
+    char ten[100];
+};
+
+// tao ham nhap tt
+void nhaptt(sinhvien mang[], int index)
+{
+    for (int i = 0; i < index; i++)
+    {
+        cout << "nhap ma cua sv " << i + 1 << ": ";
+        cin >> mang[i].masv;
+        cin.ignore();
+        cout << "nhap ten cua sv " << i + 1 << ": ";
+        gets_s(mang[i].ten, sizeof(mang[i].ten));
+        cin.ignore();
+    }
+}
+
+void xuattt(sinhvien mang[], int index)
+{
+    cout << "thong tin sinh vien!" << endl;
+    for (int i = 0; i < index; i++)
+    {
+        cout << "msv cua sv " << i + 1 << ": " << mang[i].masv << endl;
+        cout << "ten cua sv " << i + 1 << ": " << mang[i].ten << endl;
+    }
+}
 
 int main()
 {
@@ -79,5 +113,11 @@ int main()
 
     cuahangoto cuahang2 = cuahang1; // chúng quản lý 2 ô nhớ khác nhau
     cout << "thong tin cua hang 2: " << cuahang2.gioithieu << endl;
+
+    // khai báo mảng cấu trúc
+    int index = 2;
+    sinhvien mang[index];
+    nhaptt(mang, index);
+    xuattt(mang, index);
     return 0;
 }
